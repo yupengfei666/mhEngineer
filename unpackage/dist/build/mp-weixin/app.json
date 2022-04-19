@@ -1,0 +1,81 @@
+{
+    "pages": [
+        "pages/main/tab2",
+        "pages/main/tab1",
+        "pages/main/yuanxing",
+        "pages/main/test",
+        "pages/main/login",
+        "pages/main/tab3",
+        "pages/main/tab4",
+        "pages/tab1/agent",
+        "pages/tab1/danger",
+        "pages/tab1/dangerdetail",
+        "pages/tab2/baoxiujilu",
+        "pages/tab2/bxtimeline",
+        "pages/tab2/bxmessage",
+        "pages/tab2/bxrate",
+        "pages/tab2/bxshift",
+        "pages/tab2/location",
+        "pages/tab2/baoxiuadd",
+        "pages/tab2/dataquery",
+        "pages/tab2/alarmlist",
+        "pages/tab2/baoxiudetail",
+        "pages/tab2/picture",
+        "pages/tab3/lishiguzhang",
+        "pages/tab3/lishiyinhuan",
+        "pages/tab3/old-agent",
+        "pages/tab3/old-danger",
+        "pages/tab3/tiyanzhanghao",
+        "pages/tab3/video",
+        "pages/tab3/zhuangtaiquxian",
+        "pages/tab4/about",
+        "pages/tab4/set",
+        "pages/tab4/wentifankui",
+        "pages/tab4/addfankui",
+        "pages/tab4/checkmusic",
+        "pages/tab4/get-user-info",
+        "pages/tab4/gongzhonghao",
+        "pages/tab4/set/gerenxinxi",
+        "pages/tab4/set/guanzhuqizhongji",
+        "pages/tab4/set/tuisongfangshi",
+        "pages/tab4/set/xiugaimima"
+    ],
+    "subPackages": [],
+    "window": {
+        "navigationBarTextStyle": "white",
+        "navigationBarBackgroundColor": "#34A2DA",
+        "backgroundColor": "#F8F8F8"
+    },
+    "tabBar": {
+        "color": "#bfbfbf",
+        "selectedColor": "#1296db",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/main/tab1",
+                "text": "待办",
+                "iconPath": "static/img/quanju0.png",
+                "selectedIconPath": "static/img/quanju1.png"
+            },
+            {
+                "pagePath": "pages/main/tab2",
+                "text": "工作台",
+                "iconPath": "static/img/jiankang0.png",
+                "selectedIconPath": "static/img/jiankang1.png"
+            },
+            {
+                "pagePath": "pages/main/tab4",
+                "text": "我的",
+                "iconPath": "static/img/wode0.png",
+                "selectedIconPath": "static/img/wode1.png"
+            }
+        ]
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "获取您的位置信息"
+        }
+    },
+    "usingComponents": {},
+    "sitemapLocation": "sitemap.json"
+}

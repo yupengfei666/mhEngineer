@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "技术支持详情",
+  "usingComponents": {
+    "u-form": "/uview-ui/components/u-form/u-form",
+    "u-form-item": "/uview-ui/components/u-form-item/u-form-item",
+    "u-tag": "/uview-ui/components/u-tag/u-tag",
+    "picture-show": "/components/common/pictureShow"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["uni-app:///main.js"],"names":["createPage","Page"],"mappings":";;;;wEAAA,qBACA,sBACA,gD,mDACAA,EAAWC,a","file":"pages/tab2/dianjianjilu.js","sourcesContent":["import 'uni-pages';\nimport Vue from 'vue'\nimport Page from './pages/tab2/dianjianjilu.vue'\ncreatePage(Page)"],"sourceRoot":""}

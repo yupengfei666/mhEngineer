@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "转单",
+  "usingComponents": {
+    "u-divider": "/uview-ui/components/u-divider/u-divider",
+    "u-search": "/uview-ui/components/u-search/u-search",
+    "u-cell-group": "/uview-ui/components/u-cell-group/u-cell-group",
+    "u-cell-item": "/uview-ui/components/u-cell-item/u-cell-item",
+    "u-button": "/uview-ui/components/u-button/u-button",
+    "u-toast": "/uview-ui/components/u-toast/u-toast"
+  }
+}

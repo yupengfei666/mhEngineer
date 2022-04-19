@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "设备监控",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "u-empty": "/uview-ui/components/u-empty/u-empty"
+  }
+}

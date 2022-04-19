@@ -1,0 +1,257 @@
+{
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页
+		{
+			"path": "pages/main/tab2",
+			"style": {
+				"navigationBarTitleText": "工作台"
+			}
+		},
+		{
+			"path": "pages/main/tab1",
+			"style": {
+				"navigationBarTitleText": "设备监控",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/main/yuanxing",
+			"style": {
+				"navigationBarTitleText": "设备监控",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/main/test",
+			"style": {
+				"navigationBarTitleText": "设备监控",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/main/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"titleNView": false,
+					"animationType": "slide-in-bottom"
+				}
+			}
+		}, {
+			"path": "pages/main/tab3",
+			"style": {
+				"navigationBarTitleText": "数据查询"
+			}
+		}, {
+			"path": "pages/main/tab4",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		}, {
+			"path": "pages/tab1/agent",
+			"style": {
+				"navigationBarTitleText": "实时状态"
+			}
+		}, {
+			"path": "pages/tab1/danger",
+			"style": {
+				"navigationBarTitleText": "隐患分析"
+			}
+		}, {
+			"path": "pages/tab1/dangerdetail",
+			"style": {
+				"navigationBarTitleText": "行为隐患明细"
+			}
+		}, {
+			"path": "pages/tab2/baoxiujilu",
+			"style": {
+				"navigationBarTitleText": "技术支持",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/tab2/bxtimeline",
+			"style": {
+				"navigationBarTitleText": "查看进度"
+			}
+		}, {
+			"path": "pages/tab2/bxmessage",
+			"style": {
+				"navigationBarTitleText": "留言"
+			}
+		}, {
+			"path": "pages/tab2/bxrate",
+			"style": {
+				"navigationBarTitleText": "服务评价"
+			}
+		},{
+			"path": "pages/tab2/bxshift",
+			"style": {
+				"navigationBarTitleText": "转单"
+			}
+		},{
+			"path": "pages/tab2/location",
+			"style": {
+				"navigationBarTitleText": "更新位置"
+			}
+		},{
+			"path": "pages/tab2/baoxiuadd",
+			"style": {
+				"navigationBarTitleText": "技术支持代报"
+			}
+		}, {
+			"path": "pages/tab2/dataquery",
+			"style": {
+				"navigationBarTitleText": "故障查询"
+			}
+		}, {
+			"path": "pages/tab2/alarmlist",
+			"style": {
+				"navigationBarTitleText": "故障列表",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/tab2/baoxiudetail",
+			"style": {
+				"navigationBarTitleText": "技术支持详情"
+			}
+		}, {
+			"path": "pages/tab2/picture",
+			"style": {
+				"navigationBarTitleText": "照片",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/tab3/lishiguzhang",
+			"style": {
+				"navigationBarTitleText": "故障查询"
+			}
+		}, {
+			"path": "pages/tab3/lishiyinhuan",
+			"style": {
+				"navigationBarTitleText": "隐患查询"
+			}
+		}, {
+			"path": "pages/tab3/old-agent",
+			"style": {
+				"navigationBarTitleText": "历史报警",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/tab3/old-danger",
+			"style": {
+				"navigationBarTitleText": "历史隐患",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/tab3/tiyanzhanghao",
+			"style": {
+				"navigationBarTitleText": "体验账号",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/tab3/video",
+			"style": {
+				"navigationBarTitleText": "监控视频",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/tab3/zhuangtaiquxian",
+			"style": {
+				"navigationBarTitleText": "报警状态曲线",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/tab4/about",
+			"style": {
+				"navigationBarTitleText": "关于"
+			}
+		}, {
+			"path": "pages/tab4/set",
+			"style": {
+				"navigationBarTitleText": "设置"
+			}
+		}, {
+			"path": "pages/tab4/wentifankui",
+			"style": {
+				"navigationBarTitleText": "帮助与反馈"
+			}
+		}, {
+			"path": "pages/tab4/addfankui",
+			"style": {
+				"navigationBarTitleText": "新增反馈"
+			}
+		}, {
+			"path": "pages/tab4/checkmusic",
+			"style": {
+				"navigationBarTitleText": "选择提示音"
+			}
+		}, {
+			"path": "pages/tab4/get-user-info",
+			"style": {
+				"navigationBarTitleText": "获取微信信息"
+			}
+		}, {
+			"path": "pages/tab4/gongzhonghao",
+			"style": {
+				"navigationBarTitleText": "关注美恒公众号"
+			}
+		}, {
+			"path": "pages/tab4/set/gerenxinxi",
+			"style": {
+				"navigationBarTitleText": "个人信息"
+			}
+		}, {
+			"path": "pages/tab4/set/guanzhuqizhongji",
+			"style": {
+				"navigationBarTitleText": "关注起重机"
+			}
+		}, {
+			"path": "pages/tab4/set/tuisongfangshi",
+			"style": {
+				"navigationBarTitleText": "故障推送"
+			}
+		}, {
+			"path": "pages/tab4/set/xiugaimima",
+			"style": {
+				"navigationBarTitleText": "修改密码"
+			}
+		}
+	],
+	"tabBar": {
+		"color": "#bfbfbf",
+		"selectedColor": "#1296db",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/main/tab1",
+			"text": "待办",
+			"iconPath": "static/img/quanju0.png",
+			"selectedIconPath": "static/img/quanju1.png"
+		}, {
+			"pagePath": "pages/main/tab2",
+			"text": "工作台",
+			"iconPath": "static/img/jiankang0.png",
+			"selectedIconPath": "static/img/jiankang1.png"
+		}, {
+			"pagePath": "pages/main/tab4",
+			"text": "我的",
+			"iconPath": "static/img/wode0.png",
+			"selectedIconPath": "static/img/wode1.png"
+		}]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#34A2DA",
+		"backgroundColor": "#F8F8F8"
+	},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [{
+			"name": "", //模式名称
+			"path": "", //启动页面，必选
+			"query": "" //启动参数，在页面的onLoad函数里面得到
+		}]
+	}
+}

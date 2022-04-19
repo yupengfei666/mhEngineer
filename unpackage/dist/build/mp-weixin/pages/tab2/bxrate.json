@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "服务评价",
+  "usingComponents": {
+    "u-rate": "/uview-ui/components/u-rate/u-rate",
+    "u-input": "/uview-ui/components/u-input/u-input"
+  }
+}

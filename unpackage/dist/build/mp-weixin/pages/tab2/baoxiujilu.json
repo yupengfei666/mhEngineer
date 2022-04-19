@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "技术支持",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "u-card": "/uview-ui/components/u-card/u-card",
+    "u-button": "/uview-ui/components/u-button/u-button",
+    "u-tag": "/uview-ui/components/u-tag/u-tag",
+    "u-badge": "/uview-ui/components/u-badge/u-badge",
+    "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore",
+    "u-toast": "/uview-ui/components/u-toast/u-toast"
+  }
+}

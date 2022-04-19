@@ -1,0 +1,1 @@
+#bxtimeline .u-order-title{color:#333;font-weight:700;font-size:32rpx}#bxtimeline .u-order-desc{margin-top:30rpx;color:#606266;font-size:28rpx;margin-bottom:6rpx}#bxtimeline .u-order-time{margin-top:15rpx;color:#606266;font-size:26rpx}#bxtimeline .u-time-axis::before{border-left-color:#4cd964!important;border-left-width:2px!important}
