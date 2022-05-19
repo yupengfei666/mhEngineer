@@ -4,6 +4,11 @@
 			<u-form-item label="工单号">
 				<span>{{form.OrderID}}</span>
 			</u-form-item>
+			<u-form-item label="完成内容" v-if="form.ReMark">
+				<view style="line-height: 38rpx;">
+					<text>{{form.ReMark}}</text>
+				</view>
+			</u-form-item>
 			<u-form-item label="起重机">
 				<span>{{form.CraneName}}</span>
 			</u-form-item>
@@ -14,7 +19,7 @@
 				<span>{{form.ProjectNumber}}</span>
 			</u-form-item>
 			<u-form-item label="产品类型" prop="product_type">
-				<u-tag style="margin-right: 10rpx;" :text="item" v-for="(item,index) in form.ProductType" type="success"  shape="circle"/>
+				<u-tag style="margin-right: 10rpx;" :text="item" v-for="(item,index) in form.ProductTypeArr" type="success"  shape="circle"/>
 			</u-form-item>
 			<u-form-item label="需求描述">
 				<span>{{form.Describe}}</span>
@@ -23,7 +28,7 @@
 				<span>{{form.ContactPersonName}}</span>
 			</u-form-item>
 			<u-form-item label="联系电话">
-				<span>{{form.ContactNumber}}</span>
+				<span style="color: #007AFF;font-weight: bold;" @click="callPhone(form.ContactNumber)">{{form.ContactNumber}}</span>
 			</u-form-item>
 			<u-form-item label="图片">
 				<pictureShow :imgData="form.report_img"></pictureShow>
@@ -45,6 +50,11 @@
 			pictureShow
 		},
 		methods: {
+			callPhone(tel) {
+				uni.makePhoneCall({
+					phoneNumber: tel
+				});
+			},
 		},
 		onReady() {
 			this.$refs.uForm.setRules(this.rules)

@@ -6,7 +6,9 @@
 					<u-icon name="account-fill" size="40"></u-icon>
 					<span style="margin-left: 5rpx;">{{item.OrderMessagePersonName}}</span>
 				</view>
-				<view v-if="item.Type === '0'" style="margin-bottom: 10rpx;width: 80%;">{{item.Content}}</view>
+				<view v-if="item.Type === '0'" style="margin-bottom: 10rpx;width: 80%;">
+					<text>{{item.Content}}</text>
+				</view>
 				<view v-else style="margin-bottom: 10rpx;width: 80%;">
 					<pictureShow :imgData="[item.PictureAddress]"></pictureShow>
 				</view>
@@ -17,7 +19,7 @@
 			</view>
 		</scroll-view>
 		<view
-			style="border-top: #DCDFE6 1px solid;height: 90rpx;background-color: #E4E7ED;display: flex;align-items: center;justify-content: space-between;">
+			style="border-top: #DCDFE6 1px solid;height: 90rpx;background-color: #E4E7ED;display: flex;align-items: center;">
 			<view style="width: 11%;display: flex;justify-content: center;">
 				<!-- <u-icon name="photo" color="#2979ff" size="60"></u-icon> -->
 				<u-upload :action="action" :custom-btn="true" :show-upload-list="false" @on-success="uploadSuccess">
@@ -26,10 +28,10 @@
 					</view>
 				</u-upload>
 			</view>
-			<view style="width: 89%;height: 100%;padding: 10rpx;display: flex;align-items: center;">
-				<u-input v-model="inputMessage" style="width: 100%;" :custom-style="{background: 'white',padding: '0px'}" type="text"
-					:border="false" />
-				<u-button style="margin-left: 8rpx;" @click="submit(0)" size="mini" type="success" shape="square">发布</u-button>
+			<view style="width: 78%;height: auto;padding: 10rpx;display: flex;align-items: center;overflow: auto;">
+				<u-input v-model="inputMessage" style="width: 100%;" :custom-style="{background: 'white',padding: '0px'}" type="textarea"
+					:border="true"  :height="70"/>
+				<u-button style="margin-left: 8rpx;position: absolute;right: 6rpx;" @click="submit(0)" size="mini" type="success" shape="square">发布</u-button>
 			</view>
 		</view>
 	</view>

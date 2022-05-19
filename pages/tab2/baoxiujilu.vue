@@ -12,7 +12,8 @@
 								{{item.OrderID}}
 							</view>
 							<view style="margin-left: 30rpx;">
-								<u-button v-if="type > 0" size="mini" @click="progress(item.OrderID)" plain type="success">
+								<u-button v-if="type > 0" size="mini" @click="progress(item.OrderID)" plain
+									type="success">
 									查看进度</u-button>
 							</view>
 						</view>
@@ -23,14 +24,14 @@
 				</view>
 				<view slot="body">
 					<view style="background-color: #f4f7fc;padding: 10rpx;padding-bottom: 0rpx;">
-						<u-tag :text="itemT" :key="itemT" v-for="itemT in item.ProductType" type="warning"
+						<u-tag :text="itemT" :key="itemT" v-for="itemT in item.ProductTypeArr" type="warning"
 							style="margin-right: 10rpx;margin-bottom: 10rpx;display: inline-block;" mode="plain" />
 					</view>
 					<view
 						style="display: flex;justify-content: space-between;height: 80rpx;align-items: center;border-bottom: solid 2rpx #E4E7ED;">
-						<view>上报公司</view>
+						<view>上报信息</view>
 						<view style="color: #909399;" @click="">
-							{{item.CompanyName}}
+							{{item.CompanyName}}-{{item.ContactPersonName}}
 						</view>
 					</view>
 					<view
@@ -41,7 +42,7 @@
 						</view>
 					</view>
 					<view style="text-align: right;position: relative;">
-						<u-button v-if="type == 1" type="primary" size="medium" :plain="true" @click="complete(item)"
+						<u-button v-if="type == 1" type="primary" size="medium" :plain="true" @click="openCompleteM(item)"
 							style="margin-right: 16rpx;">
 							完成</u-button>
 						<u-button v-if="type == 0" type="primary" size="medium" :plain="true" @click="accept(item)"
@@ -53,8 +54,8 @@
 						<u-button v-if="type == 1" type="primary" size="medium" :plain="true" @click="shift(item)"
 							style="margin-right: 16rpx;">
 							转单</u-button>
-						<u-button v-if="type > 0" type="primary" size="medium" :plain="true" @click="message(item.OrderID)"
-							style="margin-right: 16rpx;">
+						<u-button v-if="type > 0" type="primary" size="medium" :plain="true"
+							@click="message(item.OrderID)" style="margin-right: 16rpx;">
 							留言</u-button>
 						<u-badge v-if="item.MessageNum > 0" type="error" :count="item.MessageNum"
 							style="position: absolute;top: -30rpx;">
@@ -63,6 +64,11 @@
 				</view>
 			</u-card>
 			<u-loadmore :status="status" :load-text="loadText" @loadmore="getNextData" />
+			<u-modal title="完成情况" @confirm="completeSubmit" :show-cancel-button="true" v-model="complete.show">
+				<view style="margin: 40rpx 10rpx 0rpx;">
+					<u-input v-model="complete.content" type="textarea" :border="true" />
+				</view>
+			</u-modal>
 		</view>
 		<u-toast ref="uToast" />
 	</view>
@@ -85,6 +91,11 @@
 				showDetailVisible: false,
 				showDelete: false,
 				deleteItemId: '',
+				complete: {
+					show: false,
+					data: {},
+					content: '已完成'
+				},
 				tabList: [{
 					name: '全部'
 				}, {
@@ -102,17 +113,28 @@
 		},
 		computed: {},
 		methods: {
-			copyId(val){
+			copyId(val) {
 				uni.setClipboardData({
 					data: val,
-					success: function () {
-					}
+					success: function() {}
 				});
 			},
-			complete(data) {
-				data.ProductType = JSON.stringify(data.ProductType)
+			openCompleteM(data) {
+				this.complete.show = true
+				this.complete.data = data
+			},
+			completeSubmit() {
+				if(!this.complete.content) {
+					this.$refs.uToast.show({
+						title: '请填写具体内容',
+						type: 'error'
+					})
+					return
+				}
+				this.complete.data.ProductType = JSON.stringify(this.complete.data.ProductTypeArr)
+				this.complete.data.ReMark = this.complete.content
 				let p = {
-					info: JSON.stringify(data),
+					info: JSON.stringify(this.complete.data),
 					type: 4
 				}
 				this.$myHttp('Order/UpdateOrder', p).then(res => {
@@ -128,7 +150,6 @@
 				this.current = index;
 			},
 			deleteOk() {
-				console.log(this.deleteItemId)
 				this.initData()
 			},
 			deleteItem(val) {
@@ -155,7 +176,7 @@
 				})
 			},
 			accept(data) {
-				data.ProductType = JSON.stringify(data.ProductType)
+				data.ProductType = JSON.stringify(data.ProductTypeArr)
 				let p = {
 					info: JSON.stringify(data),
 					type: 2
@@ -190,7 +211,7 @@
 				this.$myHttp('Order/SelectOrder', p).then(res => {
 					console.log(res)
 					for (let item of res.Data) {
-						item.ProductType = JSON.parse(item.ProductType || '[]')
+						item.ProductTypeArr = JSON.parse(item.ProductType || '[]')
 						this.selectData.push(item)
 					}
 					this.status = this.selectData.length === res.Total ? 'nomore' : 'loadmore'
@@ -216,7 +237,9 @@
 		},
 		onReady() {},
 		onShow() {
-			this.initData()
+			if (this.type != 2) {
+				this.initData()
+			}
 		},
 		onLoad(data = '') {
 			this.type = data.type
@@ -231,7 +254,10 @@
 			uni.setNavigationBarTitle({
 				title: title
 			});
-
+			// 只有在已完成的时候调用初始化方法，实现在点击详情时，返回该页，界面不刷新
+			if (this.type == 2) {
+				this.initData()
+			}
 		}
 	}
 </script>

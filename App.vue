@@ -1,7 +1,23 @@
 <script>
 	export default {
-		onLaunch: function() {
-			console.log('App Launch');
+		onLaunch() { //app 初始化
+			const _u = uni.getUpdateManager()
+			_u.onCheckForUpdate(res => { // 请求完新版本信息的回调
+				if (res.hasUpdate) { // 是否有新的版本
+					_u.onUpdateReady(() => { // 当新版本下载完成，会进行回调
+						uni.showModal({
+							title: '更新提示',
+							content: '新版本已发布,请重启当前应用!',
+							showCancel: false,
+							success(c_res) {
+								if (c_res.confirm) {
+									_u.applyUpdate() // 当新版本下载完成，调用该方法会强制当前小程序应用上新版本并重启
+								}
+							}
+						})
+					})
+				}
+			})
 		},
 		onShow: function() {
 			console.log('App Show');
@@ -23,9 +39,11 @@
 		min-height: 100%;
 		display: flex;
 	}
+
 	.u-select__body__picker-view__item {
 		font-size: 40rpx !important;
 	}
+
 	.content {
 		display: flex;
 		flex: 1;
